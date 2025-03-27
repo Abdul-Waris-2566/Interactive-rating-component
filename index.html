@@ -299,9 +299,11 @@
                       )
     
     submitBtn.addEventListener("click", function () {
+      userRating.textContent = rating
+      if(rating === 0 ) return;
+      
       sectionRating.classList.add("hidden");
       sectionThankYou.classList.remove("hidden");
-      userRating.textContent = rating
     });
   </script>
 </html>
