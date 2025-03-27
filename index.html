@@ -164,7 +164,7 @@
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <div class="list-items">
+      <div class="rating-btns">
         <button class="rating-btn">1</button>
         <button class="rating-btn">2</button>
         <button class="rating-btn">3</button>
@@ -285,13 +285,26 @@
   <script>
     "strict";
 
+    const ratingBtns = document.querySelectorAll('.rating-btn')
     const submitBtn = document.querySelector(".submit-btn");
     const sectionRating = document.querySelector(".section-rating");
     const sectionThankYou = document.querySelector(".section-thankYou");
+    const userRating = document.querySelector('.rating');
+
+    let rating = 0;
+
+    ratingBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        rating = btn.textContent
+      })
+    })
+
+    console.log(rating)
 
     submitBtn.addEventListener("click", function () {
       sectionRating.classList.add("hidden");
       sectionThankYou.classList.remove("hidden");
+      userRating.textContent = rating
     });
   </script>
 </html>
