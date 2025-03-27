@@ -284,14 +284,24 @@
 
   <script>
     "strict";
-
+    const ratingBtns = document.querySelectorAll('.rating-btn')
     const submitBtn = document.querySelector(".submit-btn");
     const sectionRating = document.querySelector(".section-rating");
     const sectionThankYou = document.querySelector(".section-thankYou");
+    const userRating = document.querySelector(".rating");
 
+    let rating = 0;
+
+    ratingBtns.forEach(btn => btn.addEventListener('click', function() {
+      rating = btn.textContent;
+    }
+                                                   )
+                      )
+    
     submitBtn.addEventListener("click", function () {
       sectionRating.classList.add("hidden");
       sectionThankYou.classList.remove("hidden");
+      userRating.textContent = rating
     });
   </script>
 </html>
